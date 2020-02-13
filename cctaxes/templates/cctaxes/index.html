@@ -1,0 +1,183 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Property Tax Explorer | Cook County</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+
+    <meta charset="utf-8">
+    <title>Property Tax 1-2-3 | Cook County</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+    <script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "bootswatch.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+
+    </script>
+
+    <style>
+    html, body {
+      overflow: hidden;
+    }
+    #section1 {
+      height: 800px;
+      background-color: white;
+    }
+
+    #section2 {
+      height: 800px;
+      background-color: white;
+    }
+
+    #section3 {
+      height: 800px;
+      background-color: white;
+    }
+
+    #section4 {
+      height: 800px;
+      background-color: white;
+    }
+
+    #section5 {
+      height: 800px;
+      background-color: white;
+    }
+
+    #section6 {
+      height: 800px;
+      background-color: white;
+    }
+
+    #section7 {
+      height: 800px;
+      background-color: white;
+    }
+
+    #section8 {
+      height: 800px;
+      background-color: white;
+    }
+
+    #section9 {
+      height: 800px;
+      background-color: white;
+    }
+
+    #section10 {
+      height: 800px;
+      background-color: white;
+    }
+
+
+    </style>
+
+    {% block head %}
+    {% endblock %}
+
+  </head>
+
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading" >Cook County <br> <b>Property Tax 1-2-3</b> </h1>
+    <h3 class="masthead-brand"> Cook County homeowners pay property taxes every year, but the process can seem like a black box.</h3>
+
+    <p class="lead"> Enter your address PIN to find out where your taxes go and how they compare with the rest of the county.</p>
+    <br>
+    <h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+    </form>
+  </h2>
+    <br>
+    <p class="lead"> If you don't have a PIN, try my website out using PIN: 16171150100000 or 33074170350000. </p>
+    <br>
+  </main>
+
+</div>
+
+{% block content %}
+{% endblock %}
+
+{% block page_content %}
+{% endblock %}
+
+<script>
+    showhide('div1');
+    function showhide(id) {
+      if (document.getElementById) {
+        var divid = document.getElementById(id);
+        var divs = document.getElementsByClassName("hideable");
+        for (var i = 0; i < divs.length; i = i + 1) {
+          $(divs[i]).fadeOut("slow");
+        }
+        $(divid).fadeIn("slow");
+      }
+      return false;
+    }
+</script>
+
+
+    <footer class="mastfoot mt-auto">
+
+    </footer>
+
+    </body>
+
+
+</html>
